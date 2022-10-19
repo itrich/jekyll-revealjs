@@ -42,19 +42,15 @@
 	</head>
 
 	<body>
-
 		<div class="reveal">
-
 			<div class="slides">
-
-				{% for post in site.posts reversed %}
 				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
 					<script type="text/template">
 {%
-						assign lines = post.content | newline_to_br | strip_newlines | split: "<br />"
+						assign lines = page.content | newline_to_br | strip_newlines | split: "<br />"
 %}{%
 						for line in lines
-%}{% 
+%}{%
 							assign processed_line = line
 								| replace:'<fragment/>','<!-- .element: class="fragment" -->'
 								| replace:'<background>','<!-- .slide: data-background="'
@@ -81,16 +77,12 @@
 %}
 					</script>
 				</section>
-				{% endfor %}
-
 			</div>
-
 		</div>
+
 		<script src="{{ site.reveal_path }}lib/js/head.min.js"></script>
 		<script src="{{ site.reveal_path }}js/reveal.js"></script>
-
 		<script>
-
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -136,7 +128,6 @@
 					{% endif %}
 				]
 			});
-
 		</script>
 
 	</body>

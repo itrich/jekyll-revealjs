@@ -14,19 +14,19 @@ reveal_theme: black.css
 reveal_transition: default
 
 # Path to the used theme (defaults to the Reveal.js standard theme path)
-reveal_theme_path: reveal.js/css/theme/ 
+reveal_theme_path: reveal.js/css/theme/
 
 # Additional custom CSS paths
-extra_css: 
+extra_css:
 
 # Custom CSS for highlighting (defaults to reveal.js/lib/css/zenburn.css)
-highlight_style_sheet: 
+highlight_style_sheet:
 
 # Embed Server-side speaker notes?
 reveal_notes_server: false
 
 # Additional reveal.js options
-reveal_options: 
+reveal_options:
 
 # Additional reveal.js dependencies
 reveal_dependencies:
@@ -37,14 +37,28 @@ reveal_path: reveal.js/
 # mermaid.js diagram integration
 mermaid_diagrams: true
 
+collections:
+  slides:
+    output: true
+    permalink: /:collection/:name
+
+defaults:
+  - scope:
+      path: ''
+      type: 'slides'
+    values:
+      layout: 'reveal'
+      permalink: :name.html
+
 # Exclude directories and/or files from the conversion
 exclude:
   - Gemfile*
   - LICENSE
   - README.md
 
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
 # Don't change anything below
 markdown: kramdown
 highlighter: rouge
 markdown_ext: ignoreme
-
